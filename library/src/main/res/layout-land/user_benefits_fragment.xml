@@ -20,6 +20,7 @@
     android:layout_height="match_parent"
     android:baselineAligned="false"
     android:orientation="horizontal"
+    android:background="@drawable/bg_guid"
     android:padding="24dp">
 
     <LinearLayout
@@ -52,19 +53,21 @@
             android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:layout_marginBottom="12dp"
             android:lineSpacingExtra="32dp"
             android:maxWidth="240dp"
-            android:textSize="24sp" />
+            android:textSize="29sp" />
 
         <TextView
             android:id="@+id/subtitleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#fff"
             android:layout_marginBottom="28dp"
             android:maxLines="3"
             android:maxWidth="240dp"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/getStarted"

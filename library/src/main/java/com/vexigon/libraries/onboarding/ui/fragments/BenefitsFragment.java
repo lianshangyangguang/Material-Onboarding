@@ -41,7 +41,7 @@ import com.vexigon.libraries.onboarding.util.BenefitsKeys;
 
 public class BenefitsFragment extends Fragment implements BenefitsFragmentInterface {
 
-    RelativeLayout layout;
+    LinearLayout layout;
     ImageView illustration;
     TextView titleText, subtitleText;
     Button getStarted;
@@ -66,7 +66,7 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        layout = (RelativeLayout) getView().findViewById(R.id.userBenefitsLayout);
+        layout = (LinearLayout) getView().findViewById(R.id.userBenefitsLayout);
         illustration = (ImageView) getView().findViewById(R.id.illustrationRes);
         titleText = (TextView) getView().findViewById(R.id.titleText);
         subtitleText = (TextView) getView().findViewById(R.id.subtitleText);
