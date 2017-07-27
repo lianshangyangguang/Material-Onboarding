@@ -30,4 +30,6 @@ public interface BenefitsFragmentInterface {
     int getIllustrationResource(int position);
 
     String getBackgroundColor(int position);
+
+    void setButtonVisible(int position);
 }

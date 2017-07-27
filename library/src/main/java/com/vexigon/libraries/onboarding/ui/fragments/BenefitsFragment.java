@@ -27,6 +27,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -40,7 +41,7 @@ import com.vexigon.libraries.onboarding.util.BenefitsKeys;
 
 public class BenefitsFragment extends Fragment implements BenefitsFragmentInterface {
 
-    LinearLayout layout;
+    RelativeLayout layout;
     ImageView illustration;
     TextView titleText, subtitleText;
     Button getStarted;
@@ -65,7 +66,7 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        layout = (LinearLayout) getView().findViewById(R.id.userBenefitsLayout);
+        layout = (RelativeLayout) getView().findViewById(R.id.userBenefitsLayout);
         illustration = (ImageView) getView().findViewById(R.id.illustrationRes);
         titleText = (TextView) getView().findViewById(R.id.titleText);
         subtitleText = (TextView) getView().findViewById(R.id.subtitleText);
@@ -92,8 +93,8 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
                 getActivity().finish();
             }
         });
-
-        layout.setBackgroundColor(Color.parseColor(getBackgroundColor(position)));
+        setButtonVisible(position);
+        //layout.setBackgroundColor(Color.parseColor(getBackgroundColor(position)));
     }
 
     @Override
@@ -125,5 +126,14 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
             return getString(R.string.white);
         else
             return getActivity().getIntent().getStringArrayExtra(BenefitsKeys.BACKGROUND_COLOR_RES)[position];
+    }
+
+    @Override
+    public void setButtonVisible(int position) {
+        if(position==2){
+            getStarted.setVisibility(View.VISIBLE);
+        }else{
+            getStarted.setVisibility(View.INVISIBLE);
+        }
     }
 }

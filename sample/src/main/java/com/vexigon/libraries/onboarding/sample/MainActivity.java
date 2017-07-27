@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
             case R.id.demo:
                 new TopUserBenefitsModel(this)
                         .setupSlides(
-                                new Page("Title 1", "Subtitle 1", R.mipmap.ic_launcher),
-                                new Page("Title 2", "Subtitle 2", R.mipmap.ic_launcher),
-                                new Page("Title 3", "Subtitle 3", "Custom Button Text", R.mipmap.ic_launcher)
+                                new Page("分享功能上线", "和家人朋友分享你的精彩", R.mipmap.icon_guid1),
+                                new Page("全新界面升级", "新视觉，新体验", R.mipmap.icon_guid2),
+                                new Page("设备绑定机制", "主人&访客权限分离，让生活更安全", "开始体验", R.mipmap.icon_guid3)
                         )
                         .launch();
                 break;

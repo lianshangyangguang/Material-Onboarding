@@ -33,7 +33,8 @@ public class UserBenefitsViewpagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new BenefitsFragment(position);
+        BenefitsFragment frg=new BenefitsFragment(position);
+        return frg;
     }
 
     @Override
