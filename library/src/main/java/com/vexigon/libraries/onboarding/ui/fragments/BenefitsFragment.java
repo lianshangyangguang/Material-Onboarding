@@ -33,7 +33,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.vexigon.libraries.onboarding.R;
 import com.vexigon.libraries.onboarding.ui.interfaces.BenefitsFragmentInterface;
+import com.vexigon.libraries.onboarding.ui.models.TopUserBenefitsModel;
 import com.vexigon.libraries.onboarding.util.BenefitsKeys;
+
 
 /**
  * Created by Andrew Quebe on 3/2/2017.
@@ -86,15 +88,13 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
         getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*
-                 * Display a 'Get Started' button throughout the animation, and loop through the animation continuously until the 'Get Started' action is tapped.
-                 * https://material.io/guidelines/growth-communications/onboarding.html#onboarding-top-user-benefits
-                 */
+                getActivity().setResult(TopUserBenefitsModel.RESULT_CODE);
                 getActivity().finish();
             }
         });
         setButtonVisible(position);
         //layout.setBackgroundColor(Color.parseColor(getBackgroundColor(position)));
+        layout.setBackgroundResource(getBackgroundResource(position));
     }
 
     @Override
@@ -129,8 +129,19 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
     }
 
     @Override
+    public int getBackgroundResource(int position) {
+        return getActivity().getIntent().getIntExtra(BenefitsKeys.BACKGOUND_RESOURCE,0);
+    }
+
+    @Override
+    public int getButtonBackroundRes(int position) {
+        return getActivity().getIntent().getIntArrayExtra(BenefitsKeys.BUTTON_BACKGOUND_RES)[position];
+    }
+
+    @Override
     public void setButtonVisible(int position) {
         if(position==2){
+            getStarted.setBackgroundResource(getButtonBackroundRes(position));
             getStarted.setVisibility(View.VISIBLE);
         }else{
             getStarted.setVisibility(View.INVISIBLE);

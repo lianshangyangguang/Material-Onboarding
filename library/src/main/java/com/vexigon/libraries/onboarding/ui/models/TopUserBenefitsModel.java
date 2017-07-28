@@ -33,14 +33,18 @@ import java.util.ArrayList;
 
 @SuppressWarnings("FieldCanBeLocal")
 public class TopUserBenefitsModel {
-
     private String[] titleText, subtitleText, buttonText;
     private int[] illustrationRes;
     private Context context;
+    private Activity mAcitvity;
+    public static final int REQUEST_CODE=100;
+    public static final int RESULT_CODE=100;
 
     private ArrayList<Page> pages = new ArrayList<>();
 
     private String[] backgroundColorRes;
+    private int backgoundRes;
+
 
     /**
      * Creates a new instance of the TopUserBenefitsModel
@@ -49,6 +53,7 @@ public class TopUserBenefitsModel {
      */
     public TopUserBenefitsModel(@NonNull Activity context) {
         this.context = context;
+        this.mAcitvity=context;
     }
 
     /**
@@ -138,6 +143,7 @@ public class TopUserBenefitsModel {
     private Intent getIntent() {
         String[] titleText = new String[3], subtitleText = new String[3], buttonText = new String[3];
         int[] illustrationRes = new int[3];
+        int buttonbackgoundRes[] = new int[3];
 
         int count = 0;
         for (Page page : pages) {
@@ -158,6 +164,7 @@ public class TopUserBenefitsModel {
                 subtitleText[count] = page.getSubtitle();
                 buttonText[count] = page.getButtonText();
                 illustrationRes[count] = page.getDrawableRes();
+                buttonbackgoundRes[count]=page.getButtonbackgoundRes();
                 count++;
             }
         }
@@ -167,13 +174,22 @@ public class TopUserBenefitsModel {
                 .putExtra(BenefitsKeys.SUBTITLE_TEXT, subtitleText)
                 .putExtra(BenefitsKeys.BUTTON_TEXT, buttonText)
                 .putExtra(BenefitsKeys.ILLUSTRATION_RES, illustrationRes)
-                .putExtra(BenefitsKeys.BACKGROUND_COLOR_RES, backgroundColorRes);
+                .putExtra(BenefitsKeys.BACKGROUND_COLOR_RES, backgroundColorRes)
+                .putExtra(BenefitsKeys.BACKGOUND_RESOURCE,backgoundRes)
+                .putExtra(BenefitsKeys.BUTTON_BACKGOUND_RES,buttonbackgoundRes);
+
     }
 
     /**
      * Launches the activity with the getIntent() data stored.
      */
     public void launch() {
-        context.startActivity(getIntent());
+        mAcitvity.startActivityForResult(getIntent(),REQUEST_CODE);
     }
+
+    public TopUserBenefitsModel setBackgroundRes(int backgoundRes){
+        this.backgoundRes=backgoundRes;
+        return this;
+    }
+
 }

@@ -16,10 +16,13 @@ package com.vexigon.libraries.onboarding.sample;
  * limitations under the License.
  */
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.vexigon.libraries.onboarding.obj.Page;
 import com.vexigon.libraries.onboarding.obj.selfselect.BundledListItem;
@@ -27,6 +30,7 @@ import com.vexigon.libraries.onboarding.obj.selfselect.SSPage;
 import com.vexigon.libraries.onboarding.obj.selfselect.User;
 import com.vexigon.libraries.onboarding.obj.selfselect.UserPage;
 import com.vexigon.libraries.onboarding.sampleapp.R;
+import com.vexigon.libraries.onboarding.ui.fragments.BenefitsFragment;
 import com.vexigon.libraries.onboarding.ui.models.SelfSelectModel;
 import com.vexigon.libraries.onboarding.ui.models.TopUserBenefitsModel;
 
@@ -48,9 +52,8 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                         .setupSlides(
                                 new Page("分享功能上线", "和家人朋友分享你的精彩", R.mipmap.icon_guid1),
                                 new Page("全新界面升级", "新视觉，新体验", R.mipmap.icon_guid2),
-                                new Page("设备绑定机制", "主人&访客权限分离，让生活更安全", "开始体验", R.mipmap.icon_guid3)
-                        )
-                        .launch();
+                                new Page("设备绑定机制", "主人&访客权限分离，让生活更安全", "开始体验",R.drawable.bg_button, R.mipmap.icon_guid3)
+                        ).setBackgroundRes(R.mipmap.bg_guide).launch();
                 break;
             case R.id.demo2:
                 ArrayList<User> users = new ArrayList<>();
@@ -79,5 +82,11 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                         .launch();
                 break;
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.e("leleTest","resultCode="+resultCode);
     }
 }

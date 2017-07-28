@@ -21,6 +21,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.vexigon.libraries.onboarding.ui.fragments.BenefitsFragment;
+import com.vexigon.libraries.onboarding.ui.models.TopUserBenefitsModel;
 
 /**
  * Created by Andrew Quebe on 3/2/2017.

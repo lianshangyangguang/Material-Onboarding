@@ -66,13 +66,14 @@ public class UserBenefitsActivity extends AppCompatActivity {
         inkPageIndicator = (InkPageIndicator) findViewById(R.id.indicator);
         inkPageIndicator.setViewPager(viewPager);
 
-        start();
+//        start();
     }
 
     @Override
     protected void onDestroy() {
+
         super.onDestroy();
-        stop();
+//        stop();
     }
 
     private boolean running = false;

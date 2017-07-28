@@ -18,7 +18,7 @@ package com.vexigon.libraries.onboarding.obj;
 
 public class Page {
     private String title, subtitle, buttonText;
-    private int drawableRes;
+    private int drawableRes, buttonbackgoundRes;
 
     /**
      * Construct a new page with a title, subtitle, and drawable resource.
@@ -41,11 +41,12 @@ public class Page {
      * @param buttonText  the button text for the page.
      * @param drawableRes the drawable resource for the page.
      */
-    public Page(String title, String subtitle, String buttonText, int drawableRes) {
+    public Page(String title, String subtitle, String buttonText,int backgoundRes, int drawableRes) {
         this.title = title;
         this.subtitle = subtitle;
         this.buttonText = buttonText;
         this.drawableRes = drawableRes;
+        this.buttonbackgoundRes =backgoundRes;
     }
 
     /**
@@ -111,5 +112,13 @@ public class Page {
      */
     public void setDrawableRes(int drawableRes) {
         this.drawableRes = drawableRes;
+    }
+
+    public int getButtonbackgoundRes() {
+        return buttonbackgoundRes;
+    }
+
+    public void setButtonbackgoundRes(int buttonbackgoundRes) {
+        this.buttonbackgoundRes = buttonbackgoundRes;
     }
 }

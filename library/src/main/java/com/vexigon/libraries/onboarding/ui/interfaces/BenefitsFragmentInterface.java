@@ -32,4 +32,8 @@ public interface BenefitsFragmentInterface {
     String getBackgroundColor(int position);
 
     void setButtonVisible(int position);
+
+    int getBackgroundResource(int position);
+
+    int getButtonBackroundRes(int position);
 }

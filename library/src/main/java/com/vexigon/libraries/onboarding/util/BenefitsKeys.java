@@ -27,4 +27,6 @@ public class BenefitsKeys {
     public static final String BUTTON_TEXT = "buttonText";
     public static final String ILLUSTRATION_RES = "illustrationRes";
     public static final String BACKGROUND_COLOR_RES = "backgroundColorRes";
+    public static final String BACKGOUND_RESOURCE="backgroundResource";
+    public static final String BUTTON_BACKGOUND_RES="buttonbackgoundRes";
 }
