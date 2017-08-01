@@ -94,8 +94,8 @@ public class UserBenefitsActivity extends AppCompatActivity {
                     break;
             }
 
-            if (running)
-                start();
+//            if (running)
+//                start();
         }
     };
 
@@ -105,7 +105,7 @@ public class UserBenefitsActivity extends AppCompatActivity {
      */
     private void start() {
         running = true;
-        handler.postDelayed(runnable, 5000);
+        handler.postDelayed(runnable, 100);
     }
 
     /*

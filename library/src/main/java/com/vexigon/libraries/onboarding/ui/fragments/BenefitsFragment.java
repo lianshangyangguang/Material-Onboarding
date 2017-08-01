@@ -73,13 +73,13 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
         titleText = (TextView) getView().findViewById(R.id.titleText);
         subtitleText = (TextView) getView().findViewById(R.id.subtitleText);
         getStarted = (Button) getView().findViewById(R.id.getStarted);
-
-        Glide.with(getActivity())
-                .load(getIllustrationResource(position))
-                .override(256, 256)
-                .dontTransform()
-                .dontAnimate()
-                .into(illustration);
+        illustration.setImageResource(getIllustrationResource(position));
+//        Glide.with(getActivity())
+//                .load(getIllustrationResource(position))
+//                .override(256, 256)
+//                .dontTransform()
+//                .dontAnimate()
+//                .into(illustration);
 
         titleText.setText(getTitleText(position));
         subtitleText.setText(getSubtitleText(position));
