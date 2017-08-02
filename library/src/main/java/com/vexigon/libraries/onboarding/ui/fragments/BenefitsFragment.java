@@ -17,6 +17,7 @@ package com.vexigon.libraries.onboarding.ui.fragments;
  */
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -88,7 +89,9 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
         getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getActivity().setResult(TopUserBenefitsModel.RESULT_CODE);
+                Intent i=new Intent();
+                i.setAction(TopUserBenefitsModel.ACTION_START_EXPERIENCE);
+                getActivity().sendBroadcast(i);
                 getActivity().finish();
             }
         });

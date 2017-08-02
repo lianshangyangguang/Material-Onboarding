@@ -37,8 +37,9 @@ public class TopUserBenefitsModel {
     private int[] illustrationRes;
     private Context context;
     private Activity mAcitvity;
-    public static final int REQUEST_CODE=100;
-    public static final int RESULT_CODE=100;
+    public static final int REQUEST_CODE = 100;
+    public static final int RESULT_CODE = 100;
+    public static final String ACTION_START_EXPERIENCE="start_experience";
 
     private ArrayList<Page> pages = new ArrayList<>();
 
@@ -53,7 +54,7 @@ public class TopUserBenefitsModel {
      */
     public TopUserBenefitsModel(@NonNull Activity context) {
         this.context = context;
-        this.mAcitvity=context;
+        this.mAcitvity = context;
     }
 
     /**
@@ -164,19 +165,19 @@ public class TopUserBenefitsModel {
                 subtitleText[count] = page.getSubtitle();
                 buttonText[count] = page.getButtonText();
                 illustrationRes[count] = page.getDrawableRes();
-                buttonbackgoundRes[count]=page.getButtonbackgoundRes();
+                buttonbackgoundRes[count] = page.getButtonbackgoundRes();
                 count++;
             }
         }
-
-        return new Intent(context, UserBenefitsActivity.class)
+        Intent intent = new Intent(context, UserBenefitsActivity.class)
                 .putExtra(BenefitsKeys.TITLE_TEXT, titleText)
                 .putExtra(BenefitsKeys.SUBTITLE_TEXT, subtitleText)
                 .putExtra(BenefitsKeys.BUTTON_TEXT, buttonText)
                 .putExtra(BenefitsKeys.ILLUSTRATION_RES, illustrationRes)
                 .putExtra(BenefitsKeys.BACKGROUND_COLOR_RES, backgroundColorRes)
-                .putExtra(BenefitsKeys.BACKGOUND_RESOURCE,backgoundRes)
-                .putExtra(BenefitsKeys.BUTTON_BACKGOUND_RES,buttonbackgoundRes);
+                .putExtra(BenefitsKeys.BACKGOUND_RESOURCE, backgoundRes)
+                .putExtra(BenefitsKeys.BUTTON_BACKGOUND_RES, buttonbackgoundRes);
+        return intent;
 
     }
 
@@ -184,11 +185,11 @@ public class TopUserBenefitsModel {
      * Launches the activity with the getIntent() data stored.
      */
     public void launch() {
-        mAcitvity.startActivityForResult(getIntent(),REQUEST_CODE);
+        mAcitvity.startActivity(getIntent());
     }
 
-    public TopUserBenefitsModel setBackgroundRes(int backgoundRes){
-        this.backgoundRes=backgoundRes;
+    public TopUserBenefitsModel setBackgroundRes(int backgoundRes) {
+        this.backgoundRes = backgoundRes;
         return this;
     }
 
