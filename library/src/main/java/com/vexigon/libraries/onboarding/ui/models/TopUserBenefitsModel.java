@@ -112,15 +112,12 @@ public class TopUserBenefitsModel {
     /**
      * Sets all three pages for the TopUserBenefitsModel
      *
-     * @param page1 the first page in the activity.
-     * @param page2 the second page in the activity.
-     * @param page3 the third page in the activity.
      * @return TopUserBenefitsModel
      */
-    public TopUserBenefitsModel setupSlides(Page page1, Page page2, Page page3) {
-        this.pages.add(0, page1);
-        this.pages.add(1, page2);
-        this.pages.add(2, page3);
+    public TopUserBenefitsModel setupSlides(Page... pages ) {
+        for (int i = 0; i < pages.length; i++) {
+            this.pages.add(i, pages[i]);
+        }
         return this;
     }
 
