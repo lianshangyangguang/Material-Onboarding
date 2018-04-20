@@ -86,10 +86,10 @@ public class UserBenefitsActivity extends AppCompatActivity {
                 case 0:
                     viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
                     break;
-                case 2:
+                case 1:
                     viewPager.setCurrentItem(viewPager.getCurrentItem() + 1, true);
                     break;
-                case 1:
+                case 2:
                     viewPager.setCurrentItem(0, true);
                     break;
             }
