@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="24dp"
-        app:currentPageIndicatorColor="#fb9f28"
-        app:pageIndicatorColor="#fff" />
+        app:currentPageIndicatorColor="#fff"
+        app:pageIndicatorColor="#5fff" />
 
 </FrameLayout>
