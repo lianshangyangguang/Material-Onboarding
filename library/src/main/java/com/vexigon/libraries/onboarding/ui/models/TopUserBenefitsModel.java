@@ -118,6 +118,9 @@ public class TopUserBenefitsModel {
         for (int i = 0; i < pages.length; i++) {
             this.pages.add(i, pages[i]);
         }
+        if(pages.length==2){
+            this.pages.add(2, pages[0]);
+        }
         return this;
     }
 
