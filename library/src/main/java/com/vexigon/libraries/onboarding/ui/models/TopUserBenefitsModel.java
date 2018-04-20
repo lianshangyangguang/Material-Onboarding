@@ -44,7 +44,7 @@ public class TopUserBenefitsModel {
     private ArrayList<Page> pages = new ArrayList<>();
 
     private String[] backgroundColorRes;
-    private int backgoundRes;
+    private int[] backgoundRes;
 
 
     /**
@@ -185,7 +185,7 @@ public class TopUserBenefitsModel {
         mAcitvity.startActivity(getIntent());
     }
 
-    public TopUserBenefitsModel setBackgroundRes(int backgoundRes) {
+    public TopUserBenefitsModel setBackgroundRes(int[] backgoundRes) {
         this.backgoundRes = backgoundRes;
         return this;
     }
