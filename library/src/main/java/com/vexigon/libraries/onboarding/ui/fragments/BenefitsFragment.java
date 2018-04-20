@@ -143,7 +143,7 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
 
     @Override
     public void setButtonVisible(int position) {
-        if(position==2){
+        if(position==1){
             getStarted.setBackgroundResource(getButtonBackroundRes(position));
             getStarted.setVisibility(View.VISIBLE);
         }else{
