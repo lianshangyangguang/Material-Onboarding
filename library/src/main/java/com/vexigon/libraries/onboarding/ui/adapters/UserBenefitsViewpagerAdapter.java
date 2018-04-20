@@ -44,6 +44,6 @@ public class UserBenefitsViewpagerAdapter extends FragmentStatePagerAdapter {
          * A maximum of three illustrations should auto-rotate every two to three seconds and display pagination navigation.
          * https://material.io/guidelines/growth-communications/onboarding.html#onboarding-top-user-benefits
          */
-        return 3;
+        return 2;
     }
 }
