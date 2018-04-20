@@ -133,7 +133,8 @@ public class BenefitsFragment extends Fragment implements BenefitsFragmentInterf
 
     @Override
     public int getBackgroundResource(int position) {
-        return getActivity().getIntent().getIntExtra(BenefitsKeys.BACKGOUND_RESOURCE,0);
+        //return getActivity().getIntent().getIntExtra(BenefitsKeys.BACKGOUND_RESOURCE,0);
+        return getActivity().getIntent().getIntArrayExtra(BenefitsKeys.BACKGOUND_RESOURCE)[position];
     }
 
     @Override
