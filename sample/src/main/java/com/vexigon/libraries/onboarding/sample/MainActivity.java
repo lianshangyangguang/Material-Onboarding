@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements Button.OnClickLis
                                 new Page("分享功能上线", "和家人朋友分享你的精彩", R.drawable.icon_guide1),
                                 new Page("全新界面升级", "新视觉，新体验", R.drawable.icon_guide2),
                                 new Page("设备绑定机制", "主人&访客权限分离，让生活更安全", "开始体验",R.drawable.bg_button, R.drawable.icon_guide3)
-                        ).setBackgroundRes(R.mipmap.bg_guide).launch();
+                        ).setBackgroundRes(new int[]{R.mipmap.bg_guide,R.mipmap.bg_guide,R.mipmap.bg_guide}).launch();
                 break;
             case R.id.demo2:
                 ArrayList<User> users = new ArrayList<>();
