@@ -45,4 +45,9 @@ public class SelfSelectActivity extends AppCompatActivity {
         inkPageIndicator = (InkPageIndicator) findViewById(R.id.indicator);
         inkPageIndicator.setViewPager(viewPager);
     }
+    
+    @Override
+    public void onBackPressed() {
+        
+    }
 }
