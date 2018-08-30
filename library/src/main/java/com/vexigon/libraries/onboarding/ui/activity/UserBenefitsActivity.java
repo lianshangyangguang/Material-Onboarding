@@ -116,4 +116,9 @@ public class UserBenefitsActivity extends AppCompatActivity {
         running = false;
         handler.removeCallbacks(runnable);
     }
+    
+     @Override
+    public void onBackPressed() {
+        
+    }
 }
